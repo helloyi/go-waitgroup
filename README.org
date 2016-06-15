@@ -8,9 +8,14 @@ This could implement a simple goruntine pool.
 waitgroup.Create(size int)
 #+END_SRC
 
-+ block add 'one'
++ push 'one' into the group. block, if the group is full.
 #+BEGIN_SRC go
 WaitGroup.BlockAdd()
+#+END_SRC
+
++ pop 'one' out the group.
+#+BEGIN_SRC go
+WaitGroup.Done()
 #+END_SRC
 
 + waiting the group empty
