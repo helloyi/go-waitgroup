@@ -30,8 +30,7 @@ import (
 func main() {
 	wg := waitgroup.Create(3)
 	for i, v := range []int{1, 2, 3, 4, 5} {
-    // Block, If there are 3 goruntine runing, otherwise not.
-		wg.BlockAdd()
+		wg.BlockAdd() // Block, If there are 3 goruntine runing, otherwise not.
 		go func(k, v int) {
 			fmt.Println(k, v)
 			wg.Done()
